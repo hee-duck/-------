@@ -233,9 +233,9 @@
 
             // 주요 서비스 선택
             const handleMainServiceChange = (service) => {
-                // 추가 서비스 중복 체크
-                if (additionalServices.includes(service)) {
-                    alert('중복된 서비스입니다. 신청하실 서비스를 다시 선택해주세요.');
+                // 추가 선택 서비스가 단일 + 동일한 경우
+                if (additionalServices.length === 1 && additionalServices.includes(service)) {
+                    alert('중복된 서비스입니다. 문의하시려는 서비스를 다시 선택해주세요.');
                     return;
                 }
 
@@ -244,9 +244,9 @@
 
             // 추가 서비스 선택
             const handleAdditionalServiceChange = (service) => {
-                // 주요 서비스 중복 체크
-                if (mainService === service) {
-                    alert('중복된 서비스입니다. 신청하실 서비스를 다시 선택해주세요.');
+                // 주요 서비스와 동일하며, 추가 선택 서비스가 0개일 때 (단일 선택 시)
+                if (mainService === service && additionalServices.length === 0) {
+                    alert('중복된 서비스입니다. 문의하시려는 서비스를 다시 선택해주세요.');
                     return;
                 }
 

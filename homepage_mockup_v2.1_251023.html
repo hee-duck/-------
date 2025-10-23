@@ -233,11 +233,23 @@
 
             // 주요 서비스 선택
             const handleMainServiceChange = (service) => {
+                // 추가 서비스 중복 체크
+                if (additionalServices.includes(service)) {
+                    alert('중복된 서비스입니다. 신청하실 서비스를 다시 선택해주세요.');
+                    return;
+                }
+
                 setMainService(service);
             };
 
             // 추가 서비스 선택
             const handleAdditionalServiceChange = (service) => {
+                // 주요 서비스 중복 체크
+                if (mainService === service) {
+                    alert('중복된 서비스입니다. 신청하실 서비스를 다시 선택해주세요.');
+                    return;
+                }
+
                 setAdditionalServices((prev) =>
                     prev.includes(service)
                         ? prev.filter((s) => s !== service)
@@ -258,8 +270,8 @@
                 // 도입 문의 + 추가 문의 서비스 중복 체크
                 if (additionalServices.includes(mainService)) {
                     alert('중복된 서비스입니다. 신청하실 서비스를 다시 선택해주세요.');
-                return;
-    }
+                    return;
+                }
                 setCurrentStep(2); // 모든 서비스 공통 2단계로 이동
             };
 

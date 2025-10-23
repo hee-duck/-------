@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>비즈톡센터 회원가입_요금제 페이지(new)</title>
+</head>
+<body style="margin:0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Helvetica Neue', Arial, sans-serif; color:#111827; background:#F8FAFC;">
+  <main style="max-width:1100px; margin:0 auto; padding:32px 16px 72px;">
+    <div class="header">
+      <img alt="Biztalk" src="https://www.biztalk.co.kr/newhome/assets/img/logo/logo.svg">
+      <div class="title">
+        <h1>비즈톡 비즈메시지 견적서</h1>
+      </div>
+    </div>
+    <!-- 플랜 카드 -->
+    <section aria-label="요금제 카드" style="display:grid; grid-template-columns:repeat(1, minmax(0, 1fr)); gap:16px; margin-bottom:28px;">
+      <div style="display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:16px;">
+        <!-- 스타터 -->
+        <article style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:16px; padding:24px; box-shadow:0 8px 20px rgba(17,24,39,0.06);">
+          <div style="display:flex; align-items:center; justify-content:space-between;">
+            <h2 style="margin:0; font-size:20px;">스타터</h2>
+            <span style="display:inline-block; padding:6px 10px; border-radius:9999px; background:#EEF2FF; color:#4F46E5; font-weight:600; font-size:12px;">입문 추천</span>
+          </div>
+          <p style="margin:8px 0 16px; color:#6B7280; font-size:14px;">알림톡을 처음 쓰는 기업</p>
+          <p style="margin:0; font-size:22px; font-weight:700;">월 10,000원</p>
+          <hr style="margin:16px 0; border:none; border-top:1px dashed #E5E7EB;" />
+          <ul style="margin:0; padding-left:18px; font-size:14px; line-height:1.7;">
+            <li>알림톡 단가: 8원 (무료건수 없음)</li>
+            <li>비즈팅 신규 회원 모집 광고 메시지: 무료건수 없음</li>
+            <li>상담 자동화 AI 챗봇: 미포함</li>
+          </ul>
+        </article>
+
+        <!-- 스탠다드 -->
+        <article style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:16px; padding:24px; box-shadow:0 8px 20px rgba(17,24,39,0.06); position:relative;">
+          <div style="position:absolute; top:-10px; right:16px; background:#10B981; color:#FFFFFF; font-size:12px; font-weight:700; padding:6px 10px; border-radius:10px;">best</div>
+          <div style="display:flex; align-items:center; justify-content:space-between;">
+            <h2 style="margin:0; font-size:20px;">스탠다드</h2>
+            <span style="display:inline-block; padding:6px 10px; border-radius:9999px; background:#ECFDF5; color:#059669; font-weight:600; font-size:12px;">이용량 증가</span>
+          </div>
+          <p style="margin:8px 0 16px; color:#6B7280; font-size:14px;">알림톡 이용량이 증가하는 기업</p>
+          <p style="margin:0; font-size:22px; font-weight:700;">월 49,000원</p>
+          <hr style="margin:16px 0; border:none; border-top:1px dashed #E5E7EB;" />
+          <ul style="margin:0; padding-left:18px; font-size:14px; line-height:1.7;">
+            <li>알림톡 무료 7,000건 포함, 무료건수 소진 이후 7원</li>
+            <li>비즈팅 신규 회원 모집 광고 메시지: 무료건수 없음</li>
+            <li>상담 자동화 AI 챗봇: 미포함</li>
+          </ul>
+        </article>
+
+        <!-- 프리미엄 -->
+        <article style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:16px; padding:24px; box-shadow:0 8px 20px rgba(17,24,39,0.06);">
+          <div style="display:flex; align-items:center; justify-content:space-between;">
+            <h2 style="margin:0; font-size:20px;">프리미엄</h2>
+            <span style="display:inline-block; padding:6px 10px; border-radius:9999px; background:#FFF7ED; color:#D97706; font-weight:600; font-size:12px;">성장 가파름</span>
+          </div>
+          <p style="margin:8px 0 16px; color:#6B7280; font-size:14px;">마케팅 성장세가 가파른 기업</p>
+          <p style="margin:0; font-size:22px; font-weight:700;">월 99,000원</p>
+          <hr style="margin:16px 0; border:none; border-top:1px dashed #E5E7EB;" />
+          <ul style="margin:0; padding-left:18px; font-size:14px; line-height:1.7;">
+            <li>알림톡 무료 15,000건 포함, 무료건수 소진 이후 6원</li>
+            <li>비즈팅 신규 회원 모집 광고 메시지: 무료건수 없음</li>
+            <li>상담 자동화 AI 챗봇: 미포함</li>
+          </ul>
+        </article>
+
+        <!-- 울트라 -->
+        <article style="background:#FFFFFF; border:2px solid #C4B5FD; border-radius:16px; padding:24px; box-shadow:0 8px 20px rgba(17,24,39,0.08); position:relative;">
+          <div style="position:absolute; top:-10px; right:16px; background:#7C3AED; color:#FFFFFF; font-size:12px; font-weight:700; padding:6px 10px; border-radius:10px;">best</div>
+          <div style="display:flex; align-items:center; justify-content:space-between;">
+            <h2 style="margin:0; font-size:20px;">울트라</h2>
+            <span style="display:inline-block; padding:6px 10px; border-radius:9999px; background:#F5F3FF; color:#7C3AED; font-weight:600; font-size:12px;">엔터프라이즈</span>
+          </div>
+          <p style="margin:8px 0 16px; color:#6B7280; font-size:14px;">챗봇·신규 고객 유치를 원하는 기업</p>
+          <p style="margin:0; font-size:22px; font-weight:700;">월 150,000원</p>
+          <hr style="margin:16px 0; border:none; border-top:1px dashed #E5E7EB;" />
+          <ul style="margin:0; padding-left:18px; font-size:14px; line-height:1.7;">
+            <li>알림톡 단가: 5원 (무료건수 없음)</li>
+            <li>비즈팅 신규 회원 모집 광고 메시지 ✅ 월1,000건 무료(텍스트/이미지 선택 가능)</li>
+            <li>상담 자동화 AI 챗봇 ✅무제한 사용</li>
+          </ul>
+        </article>
+      </div>
+      <p style="margin:12px 0 0; font-size:12px; color:#6B7280;">※ 모든 요금은 부가세 별도이며, 성공 건수 기준으로 과금됩니다.</p>
+    </section>
+
+      <!-- 요금제 계산기 섹션 -->
+    <section aria-label="요금제 계산기"
+      style="margin-top:32px; background:#FFFFFF; border:1px solid #E5E7EB; border-radius:16px; overflow:hidden; box-shadow:0 8px 20px rgba(17,24,39,0.06);">
+      <div style="padding:16px 20px; display:flex; align-items:center; justify-content:space-between; background:#F9FAFB; border-bottom:1px solid #E5E7EB;">
+        <h3 style="margin:0; font-size:18px;">맞춤 요금제 계산</h3>
+        <span style="font-size:12px; color:#6B7280;">부가세 별도</span>
+      </div>
+
+      <div style="padding:20px;">
+        <!-- 발송건수(좌) + 부가세(우) -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <div style="display:flex; flex-direction:column; min-width:0;">
+            <label for="calc_volume" style="font-size:13px; color:#6B7280; margin-bottom:6px;">예상 발송 건수 (월)</label>
+            <input id="calc_volume" type="number" min="0" step="1" value="10000"
+              style="width:80%; padding:10px 12px; border:1px solid #E5E7EB; border-radius:10px; font-size:15px; background:#fff; color:#111827;" />
+          </div>
+          <div style="display:flex; flex-direction:column; min-width:0;">
+            <label style="font-size:13px; color:#6B7280; margin-bottom:6px;">부가세(10%)</label>
+            <input type="text" value="별도(미포함)" disabled
+              style="width:80%; padding:10px 12px; border:1px solid #E5E7EB; border-radius:10px; font-size:15px; background:#fff; color:#111827;" />
+          </div>
+        </div>
+
+        <!-- 체크박스 -->
+        <div style="display:flex; gap:16px; flex-wrap:wrap; margin-top:12px;">
+          <label style="color:#111827; font-size:14px; margin:0;">
+            <input type="checkbox" id="calc_useChatbot"> 챗봇 사용
+          </label>
+          <label style="color:#111827; font-size:14px; margin:0;">
+            <input type="checkbox" id="calc_useBizting"> 비즈팅 광고 메시지 사용
+          </label>
+        </div>
+
+        <!-- 도움말 -->
+        <div id="calc_helperChatbot"
+          style="display:none; margin-top:8px; padding:10px 12px; border:1px solid #E5E7EB; border-radius:10px; background:#FFFFFF;">
+          <strong style="color:#064e3b;">챗봇</strong><br />
+          챗봇은 운영하는 카카오톡 채널에서 고객이 문의를 셀프 처리할 수 있도록 돕는 서비스입니다.
+        </div>
+        <div id="calc_helperBizting"
+          style="display:none; margin-top:8px; padding:10px 12px; border:1px solid #E5E7EB; border-radius:10px; background:#FFFFFF;">
+          <strong style="color:#064e3b;">비즈팅</strong><br />
+          비즈팅은 통신사, 카드사 및 포인트사 고객을 대상으로 정밀한 타겟 조건을 설정하여,
+          내 고객이 아닌 잠재 고객에게 마케팅 메시지를 발송할 수 있는 프리미엄 메시지 마케팅 서비스입니다.
+        </div>
+
+        <!-- 결과 테이블 -->
+        <div style="margin-top:16px; overflow-x:auto;">
+          <table id="calc_cmp" role="table" style="width:100%; border-collapse:collapse; font-size:14px; min-width:600px;">
+            <thead style="background:#F9FAFB;">
+              <tr>
+                <th style="text-align:left; padding:10px 8px; border-bottom:1px solid #E5E7EB;">요금제</th>
+                <th style="text-align:right; padding:10px 8px; border-bottom:1px solid #E5E7EB;">기본료</th>
+                <th style="text-align:right; padding:10px 8px; border-bottom:1px solid #E5E7EB;">메시지 발송료</th>
+                <th style="text-align:right; padding:10px 8px; border-bottom:1px solid #E5E7EB;">총 예상비용</th>
+              </tr>
+            </thead>
+            <tbody><!-- JS 렌더링 --></tbody>
+          </table>
+          <p style="margin:12px 0 0; font-size:12px; color:#6B7280;">※ 챗봇과 비즈팅 사용 시 울트라 요금제가 추천됩니다.</p>
+        </div>
+      </div>    </section>
+
+    <!-- 비교표 -->
+    <section aria-label="요금 세부 비교표" style="margin-top:32px; background:#FFFFFF; border:1px solid #E5E7EB; border-radius:16px; overflow:hidden; box-shadow:0 8px 20px rgba(17,24,39,0.06);">
+      <div style="padding:16px 20px; display:flex; align-items:center; justify-content:space-between; background:#F9FAFB; border-bottom:1px solid #E5E7EB;">
+        <h3 style="margin:0; font-size:18px;">견적</h3>
+        <span style="font-size:12px; color:#6B7280;">단위: 원(부가세 별도)</span>
+      </div>
+      <div style="overflow-x:auto;">
+        <table role="table" style="width:100%; border-collapse:collapse; font-size:14px; min-width:880px;">
+          <thead style="background:#F9FAFB;">
+            <tr>
+              <th style="padding:14px 16px; border-bottom:1px solid #E5E7EB;">구분</th>
+              <th style="padding:14px 16px; border-bottom:1px solid #E5E7EB;">스타터</th>
+              <th style="padding:14px 16px; border-bottom:1px solid #E5E7EB;">스탠다드</th>
+              <th style="padding:14px 16px; border-bottom:1px solid #E5E7EB;">프리미엄</th>
+              <th style="padding:14px 16px; border-bottom:1px solid #E5E7EB;">울트라</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6; font-weight:600;">월 기본료</td>
+              <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">10,000원</td>
+              <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">49,000원</td>
+              <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">99,000원</td>
+              <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">150,000원</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6; font-weight:600;">알림톡 무료건수</td>
+              <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">없음</td>
+              <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">7,000건</td>
+              <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">15,000건</td>
+              <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">없음</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6; font-weight:600;">알림톡 건당 단가</td>
+              <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">8원</td>
+              <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">7원</td>
+              <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">6원</td>
+              <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6; font-weight:700; color:#7C3AED;">5원</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6; font-weight:600;">비즈팅(신규 회원 모집)</td>
+              <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">무료건수 없음</td>
+              <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">무료건수 없음</td>
+              <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">무료건수 없음</td>
+              <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6; color:#059669; font-weight:600;">✅월 1,000건 무료(텍스트/이미지 선택 가능)</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6; font-weight:600;">AI 챗봇(상담 자동화)</td>
+              <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">사용 불가</td>
+              <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">사용 불가</td>
+              <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">사용 불가</td>
+              <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6; color:#059669; font-weight:600;">✅무제한 사용</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- 공통 메시지 단가 (모든 요금제 공통) -->
+      <div style="padding:16px 20px; border-top:1px solid #E5E7EB; background:#FFFFFF;">
+        <h4 style="margin:0 0 8px; font-size:16px;">상세 상품 단가</h4>
+        <p style="margin:0 0 12px; font-size:13px; color:#6B7280;">아래 메시지는 모든 요금제(스타터 / 스탠다드 / 프리미엄 / 울트라 요금제)에 해당합니다.</p>
+        <div style="overflow-x:auto;">
+          <table role="table" style="width:100%; border-collapse:collapse; font-size:14px; min-width:880px;">
+            <thead style="background:#F9FAFB;">
+              <tr>
+                <th style="padding:12px 16px; border-bottom:1px solid #E5E7EB; text-align:left;">메시지 유형</th>
+                <th style="padding:12px 16px; border-bottom:1px solid #E5E7EB; text-align:left;">메시지 타입</th>
+                <th style="padding:12px 16px; border-bottom:1px solid #E5E7EB; text-align:left;">단가(vat 별도)</th>
+                <th style="padding:12px 16px; border-bottom:1px solid #E5E7EB; text-align:left;">비고</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6; font-weight:600;">브랜드 메시지</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">텍스트, 이미지, 와이드 이미지, 캐러셀, 와이드 아이템리스트,<br>커머스, 캐러셀 커머스, 프리미엄 동영상</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">25원</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">
+                  <div>2026년부터 발송 대상의 카카오톡 채널 친구 유/무에 따라<br>단가가 변경됩니다.</div>
+                  <ul style="margin:6px 0 0 18px; padding:0;">
+                    <li>친구: 20원</li>
+                    <li>비친구: 25원</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6; font-weight:600;">문자메시지</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">SMS</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">10원</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">알림톡 발송 실패 시 대체 발송</td>
+              </tr>
+              <tr>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;"></td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">LMS</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">30원</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">알림톡 발송 실패 시 대체 발송</td>
+              </tr>
+              <tr>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;"></td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">MMS</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">80원</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">알림톡 발송 실패 시 대체 발송</td>
+              </tr>
+              <tr>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6; font-weight:600;">RCS</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">RCS TEMPLATE</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">7원</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;"></td>
+              </tr>
+              <tr>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;"></td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">RCS IMAGE TEMPLATE</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">50원</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;"></td>
+              </tr>
+              <tr>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;"></td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">RCS SMS</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">8원</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;"></td>
+              </tr>
+              <tr>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;"></td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">RCS LMS</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">25원</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;"></td>
+              </tr>
+              <tr>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;"></td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">RCS MMS</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">60원</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;"></td>
+              </tr>
+              <tr>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6; font-weight:600;">네이버</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">정보성 메시지</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">7원</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;"></td>
+              </tr>
+              <tr>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;"></td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">혜택 메시지</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">16원</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;"></td>
+              </tr>
+              <tr>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6; font-weight:600;">비즈팅</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">텍스트</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">120원</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">울트라 요금제 무료건수 소진 시 추가 발송비용</td>
+              </tr>
+              <tr>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;"></td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">이미지</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">140원</td>
+                <td style="padding:12px 16px; border-bottom:1px solid #F3F4F6;">울트라 요금제 무료건수 소진 시 추가 발송비용</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <ul style="margin:12px 0 0 16px; color:#6B7280; font-size:12px; line-height:1.7;">
+          <li>API 연동 시 제공 비용은 무료이며, 추가 서비스(원격지원, 방문설치 등)는 별도 구축비가 발생할 수 있습니다.</li>
+          <li>월 청구되는 금액은 <b>기본료 + (사용건수*적용단가)</b> 입니다.</li>
+          <li><b>모든 상품의 월 무료건수는 이월되지 않습니다.</b></li>
+        </ul>
+      </div>
+    </section>
+
+   <script>
+      const CALC_PLANS = {
+        basic:   { name: "스타터",   monthly: 10000,  free: 0,     unit: 8 },
+        flat:    { name: "스탠다드", monthly: 49000,  free: 7000,  unit: 7 },
+        premium: { name: "프리미엄", monthly: 99000,  free: 15000, unit: 6 },
+        ultra:   { name: "울트라",   monthly: 150000, free: 0,     unit: 5 }
+      };
+
+      const $ = (id) => document.getElementById(id);
+      const fmt = (n) => n.toLocaleString('ko-KR');
+
+      function calcForPlan(key, volume) {
+        const p = CALC_PLANS[key];
+        const billable = Math.max(0, volume - p.free);
+        const sendFee = billable * p.unit;
+        const subtotal = p.monthly + sendFee; // VAT 제외
+        return { key, name: p.name, monthly: p.monthly, sendFee, subtotal };
+      }
+
+      function renderTable(results, bestKey) {
+        const tbody = $("calc_cmp").querySelector("tbody");
+        tbody.innerHTML = "";
+        results.sort((a,b)=>a.subtotal-b.subtotal).forEach(r => {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+            <td style="text-align:left; padding:10px 8px; border-bottom:1px solid #F3F4F6;">
+              ${r.name}${r.key===bestKey ? ' <span style="display:inline-block; padding:2px 8px; border-radius:9999px; background:#E5EDFF; color:#1e40af; border:1px solid #c7d2fe;">BEST</span>' : ''}
+            </td>
+            <td style="text-align:right; padding:10px 8px; border-bottom:1px solid #F3F4F6;">${fmt(r.monthly)}원</td>
+            <td style="text-align:right; padding:10px 8px; border-bottom:1px solid #F3F4F6;">${fmt(r.sendFee)}원</td>
+            <td style="text-align:right; padding:10px 8px; border-bottom:1px solid #F3F4F6; font-weight:${r.key===bestKey?'700':'400'};">${fmt(r.subtotal)}원</td>
+          `;
+          if (r.key === bestKey) {
+            tr.style.background = "#ECFDF5";
+          }
+          tbody.appendChild(tr);
+        });
+      }
+
+      function recomputeCalc() {
+        const volume     = Math.max(0, parseInt(($("calc_volume").value || "0"), 10));
+        const useChatbot = $("calc_useChatbot").checked;
+        const useBizting = $("calc_useBizting").checked;
+
+        // 도움말 토글
+        $("calc_helperChatbot").style.display = useChatbot ? "block" : "none";
+        $("calc_helperBizting").style.display = useBizting ? "block" : "none";
+
+        const results = Object.keys(CALC_PLANS).map(k => calcForPlan(k, volume));
+
+        let bestKey;
+        if (useChatbot || useBizting) {
+          bestKey = "ultra";
+        } else {
+          bestKey = results.reduce((min, r) => r.subtotal < min.subtotal ? r : min, results[0]).key;
+        }
+
+        renderTable(results, bestKey);
+      }
+
+      ["calc_volume", "calc_useChatbot", "calc_useBizting"].forEach(id => {
+        const node = $(id);
+        if (!node) return;
+        node.addEventListener("input", recomputeCalc);
+        node.addEventListener("change", recomputeCalc);
+      });
+
+      window.addEventListener("DOMContentLoaded", recomputeCalc);
+    </script>

@@ -478,6 +478,30 @@
                             rows="4" placeholder="(선택사항) 자유롭게 문의 내용을 입력해 주세요."></textarea>
                     </div>
 
+                    <!-- 개인정보 수집 동의 -->
+                    <div id="privacyAgreement" class="counsel-agree mb-8">
+                    <h4 class="text-lg font-semibold mb-3">개인정보 수집 및 이용 동의</h4>
+                    <div class="border border-gray-200 rounded-lg p-4 text-sm text-gray-700 leading-relaxed mb-4 bg-gray-50">
+                        ■ 비즈톡에서 제공하는 서비스를 원활히 제공받기 위하여, 아래와 같이 개인정보의 수집 및 이용에 동의합니다.<br><br>
+                        <strong>1. 수집 항목:</strong> 이름, 연락처, 이메일, 상담 내용, 첨부파일<br>
+                        <strong>2. 수집 및 이용 목적:</strong> 비즈톡 상담 신청 접수 및 처리<br>
+                        <strong>3. 보유 및 이용 기간:</strong> 접수 완료일로부터 90일간 보관 후 파기<br>
+                        <strong>4. 동의 거부 권리 및 불이익:</strong> 귀하는 개인정보 수집·이용에 대한 동의를 거부하실 권리가 있으며, 다만 동의하지 않으실 경우 온라인 상담 신청이 제한될 수 있습니다.
+                    </div>
+
+                    <div class="flex justify-center gap-6 text-gray-800">
+                        <label class="flex items-center cursor-pointer">
+                        <input type="radio" name="agreeChk" value="Y" id="agreeYes" class="w-4 h-4 text-blue-600 focus:ring-blue-500 border-gray-300" checked>
+                        <span class="ml-2">동의합니다</span>
+                        </label>
+
+                        <label class="flex items-center cursor-pointer">
+                        <input type="radio" name="agreeChk" value="N" id="agreeNo" class="w-4 h-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                        <span class="ml-2">동의하지 않습니다</span>
+                        </label>
+                    </div>
+                    </div>
+
                     <div class="flex gap-4">
                         <button id="prevStepBtn"
                             class="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50">
@@ -577,7 +601,7 @@
 
             // 이벤트 바인딩
             function bindEvents() {
-                // ✅ 메인 서비스 선택 시 체크 표시 적용
+                // 메인 서비스 선택 시 체크 표시 적용
                 mainServicesContainer.querySelectorAll("label").forEach((el) => {
                     el.addEventListener("click", () => {
                         const selected = el.dataset.value;
@@ -710,12 +734,15 @@
                     let valid = true;
                     let errorMsg = "";
 
-                    // ✅ 공통 입력값 검증
+                    // 공통 입력값 검증
                     const company = document.getElementById("companyName").value.trim();
                     const email = document.getElementById("email").value.trim();
                     const phone1 = document.getElementById("phone1").value.trim();
                     const phone2 = document.getElementById("phone2").value.trim();
                     const phone3 = document.getElementById("phone3").value.trim();
+
+                    // 개인정보 동의 체크
+                    const agree = document.querySelector('input[name="agreeChk"]:checked')?.value;
 
                     if (!company) {
                         valid = false;
@@ -732,6 +759,9 @@
                     } else if (isHospVisible && !isHospital) {
                         valid = false;
                         errorMsg = "병원 여부를 선택해 주세요.";
+                    } else if (agree === "N") {
+                        valid = false;
+                        errorMsg = "개인정보 수집 및 이용 동의에 동의하지 않을 경우, 서비스 상담이 제한됩니다.";
                     }
 
                     if (isDevVisible && !hasDeveloper) {

@@ -705,7 +705,7 @@
                 description:
                     "네이버 스마트스토어에서 주문·배송·결제 시 알림을 네이버와 카카오로 동시에 발송합니다. 운영 효율은 높이고, 고객 경험은 더 풍부하게 만드는 솔루션.",
                 cta: "네이버 스마트스토어 연동 메시지 자세히 보기",
-                link: "#",
+                link: "https://biztalk-mb.notion.site/299f8f41a47b8001b6f9d914c0fa8c96",
             },
             {
                 icon: "ri-robot-line",
@@ -766,17 +766,91 @@
     <section class="py-20 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 text-center mb-16">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">신뢰받는 파트너</h2>
-            <p class="text-xl text-gray-600">다양한 업종의 기업들이 비즈톡과 함께 성장하고 있습니다</p>
+            <p class="text-xl text-gray-600">
+                다양한 업종의 기업들이 비즈톡과 함께 성장하고 있습니다
+            </p>
         </div>
 
         <div class="overflow-hidden relative">
-            <div id="clientSlider" class="flex animate-scroll">
-                <!-- 클라이언트 아이콘이 JS로 주입됩니다 -->
+            <div id="clientSlider" class="flex animate-scroll items-center space-x-6">
+
+                <!-- 카드 반복 예시 -->
+                <div class="logo-card">
+                    <img src="./assets/img/partners/db_1.png" alt="DB">
+                </div>
+
+                <div class="logo-card">
+                    <img src="./assets/img/partners/samsung.png" alt="삼성">
+                </div>
+
+                <div class="logo-card">
+                    <img src="./assets/img/partners/soil.png" alt="S-Oil">
+                </div>
+
+                <div class="logo-card">
+                    <img src="./assets/img/partners/snuh.png" alt="서울대병원">
+                </div>
+
+                <div class="logo-card">
+                    <img src="./assets/img/partners/kakaobank.png" alt="카카오뱅크">
+                </div>
+
+                <div class="logo-card">
+                    <img src="./assets/img/partners/kia.png" alt="기아">
+                </div>
+
+                <div class="logo-card">
+                    <img src="./assets/img/partners/ssg.png" alt="SSG">
+                </div>
+
+                <div class="logo-card">
+                    <img src="./assets/img/partners/suhyup.png" alt="수협">
+                </div>
+
+                <div class="logo-card">
+                    <img src="./assets/img/partners/asan.png" alt="아산병원">
+                </div>
+
+                <div class="logo-card">
+                    <img src="./assets/img/partners/dunamu.png" alt="두나무">
+                </div>
+
+                <div class="logo-card">
+                    <img src="./assets/img/partners/jobkorea.png" alt="잡코리아">
+                </div>
+
+                <div class="logo-card">
+                    <img src="./assets/img/partners/sinhan.png" alt="신한은행">
+                </div>
+
+                <div class="logo-card">
+                    <img src="./assets/img/partners/meritz.png" alt="메리츠화재">
+                </div>
+
+                <div class="logo-card">
+                    <img src="./assets/img/partners/kftc.png" alt="금융결제원">
+                </div>
+
+                <div class="logo-card">
+                    <img src="./assets/img/partners/nps.png" alt="국민연금공단">
+                </div>
+
+                <!-- 무한 롤링용 복제 -->
+                <div class="logo-card">
+                    <img src="./assets/img/partners/db_1.png" alt="DB">
+                </div>
+                <div class="logo-card">
+                    <img src="./assets/img/partners/samsung.png" alt="삼성">
+                </div>
+                <div class="logo-card">
+                    <img src="./assets/img/partners/soil.png" alt="S-Oil">
+                </div>
             </div>
         </div>
     </section>
 
     <style>
+        /* 롤링 애니메이션 */
         @keyframes scroll {
             0% {
                 transform: translateX(0);
@@ -788,55 +862,52 @@
         }
 
         .animate-scroll {
-            animation: scroll 40s linear infinite;
-            width: max-content;
+            animation: scroll 50s linear infinite;
         }
 
         .animate-scroll:hover {
             animation-play-state: paused;
         }
+
+        /* 카드 스타일 */
+        .logo-card {
+            width: 12rem;
+            /* Tailwind 기준 w-48 */
+            height: 8rem;
+            /* Tailwind 기준 h-32 */
+            background-color: #f9fafb;
+            /* bg-gray-50 */
+            border-radius: 0.5rem;
+            /* rounded-lg */
+            display: flex;
+            align-items: center;
+            /* 수직 중앙 */
+            justify-content: center;
+            /* 수평 중앙 */
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            margin: 0 0.5rem;
+        }
+
+        .logo-card:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        /* 로고 이미지 크기 제한 및 중앙 정렬 */
+        .logo-card img {
+            max-width: 80%;
+            max-height: 60%;
+            object-fit: contain;
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+        }
+
+        .logo-card img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
     </style>
 
-    <script>
-        const clients = [
-            { icon: "ri-shopping-bag-line", name: "이커머스플러스" },
-            { icon: "ri-hospital-line", name: "메디케어센터" },
-            { icon: "ri-building-line", name: "테크이노베이션" },
-            { icon: "ri-restaurant-line", name: "푸드체인코리아" },
-            { icon: "ri-graduation-cap-line", name: "에듀테크솔루션" },
-            { icon: "ri-car-line", name: "모빌리티플러스" },
-            { icon: "ri-bank-line", name: "핀테크파트너" },
-            { icon: "ri-home-line", name: "리얼에스테이트" },
-            { icon: "ri-smartphone-line", name: "모바일테크" },
-            { icon: "ri-store-line", name: "리테일마스터" },
-            { icon: "ri-heart-line", name: "헬스케어플러스" },
-            { icon: "ri-plane-line", name: "트래블솔루션" },
-            { icon: "ri-game-line", name: "게임스튜디오" },
-            { icon: "ri-music-line", name: "엔터테인먼트" },
-            { icon: "ri-book-line", name: "에듀케이션허브" },
-            { icon: "ri-tools-line", name: "테크서비스" },
-            { icon: "ri-leaf-line", name: "그린에너지" },
-            { icon: "ri-shield-line", name: "시큐리티프로" },
-            { icon: "ri-global-line", name: "글로벌네트웍" },
-            { icon: "ri-rocket-line", name: "스타트업랩" },
-        ];
-
-        const slider = document.getElementById("clientSlider");
-        const duplicatedClients = [...clients, ...clients]; // 무한 루프를 위한 복제
-
-        duplicatedClients.forEach((client) => {
-            const div = document.createElement("div");
-            div.className =
-                "flex-shrink-0 w-48 mx-2 flex flex-col items-center justify-center p-6 bg-gray-50 rounded-lg hover:shadow-md transition-all h-32";
-            div.innerHTML = `
-      <div class="w-12 h-12 flex items-center justify-center mb-3">
-        <i class="${client.icon} text-3xl text-gray-600"></i>
-      </div>
-      <span class="font-medium text-gray-700 text-center text-sm">${client.name}</span>
-    `;
-            slider.appendChild(div);
-        });
-    </script>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-300 py-10 mt-20">

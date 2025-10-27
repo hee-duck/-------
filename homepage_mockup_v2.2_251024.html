@@ -410,6 +410,45 @@
                 <!-- 2단계 -->
                 <div id="step2" class="hidden">
                     <h3 class="text-2xl font-semibold text-gray-900 mb-6">추가 정보를 알려주세요</h3>
+                    <!-- 2단계 공통 입력 영역 -->
+                    <div id="commonInfo" class="mb-8">
+                        <h4 class="text-lg font-semibold mb-4">기본 정보 입력</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block font-medium mb-1">회사명(이름) <span
+                                        class="text-red-500">*</span></label>
+                                <input type="text" id="companyName"
+                                    class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                                    placeholder="회사명(이름)을 입력해 주세요.">
+                            </div>
+
+                            <div>
+                                <label class="block font-medium mb-1">전화번호 <span class="text-red-500">*</span></label>
+                                <div class="flex space-x-2">
+                                    <select id="phone1"
+                                        class="border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none w-24">
+                                        <option>010</option>
+                                        <option>011</option>
+                                        <option>016</option>
+                                        <option>017</option>
+                                        <option>018</option>
+                                        <option>019</option>
+                                    </select>
+                                    <input type="text" id="phone2" maxlength="4"
+                                        class="border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none w-24 text-center">
+                                    <input type="text" id="phone3" maxlength="4"
+                                        class="border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none w-24 text-center">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block font-medium mb-1">이메일 <span class="text-red-500">*</span></label>
+                                <input type="email" id="email"
+                                    class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                                    placeholder="이메일을 입력해 주세요.">
+                            </div>
+                        </div>
+                    </div>
 
                     <div id="bizmessageOptions" class="space-y-6">
                         <!-- 개발자 여부 -->
@@ -599,12 +638,12 @@
                     step2.classList.remove("hidden");
                     currentStep = 2;
 
-                    // ✅ 기본 비활성화
+                    // 기본 비활성화
                     bizmessageOptions.classList.add("hidden");
                     document.getElementById("devQuestion").classList.add("hidden");
                     document.getElementById("hospitalQuestion").classList.add("hidden");
 
-                    // ✅ 선택 서비스에 따라 분기
+                    // 선택 서비스에 따라 분기
                     const serviceToShow = mainService || "";
                     const addIncludes = (val) => additionalServices.includes(val);
 
@@ -627,7 +666,7 @@
                         bizmessageOptions.classList.add("hidden");
                     }
 
-                    // ✅ 추가 도입 문의 TextArea는 항상 보이도록
+                    // 추가 도입 문의 TextArea는 항상 보이도록
                     document.getElementById("additionalRequest").classList.remove("hidden");
                 });
 
@@ -670,6 +709,30 @@
                     // 선택값 검증
                     let valid = true;
                     let errorMsg = "";
+
+                    // ✅ 공통 입력값 검증
+                    const company = document.getElementById("companyName").value.trim();
+                    const email = document.getElementById("email").value.trim();
+                    const phone1 = document.getElementById("phone1").value.trim();
+                    const phone2 = document.getElementById("phone2").value.trim();
+                    const phone3 = document.getElementById("phone3").value.trim();
+
+                    if (!company) {
+                        valid = false;
+                        errorMsg = "회사명(이름)을 입력해 주세요.";
+                    } else if (!email) {
+                        valid = false;
+                        errorMsg = "이메일을 입력해 주세요.";
+                    } else if (!phone1 || !phone2 || !phone3) {
+                        valid = false;
+                        errorMsg = "전화번호를 모두 입력해 주세요.";
+                    } else if (isDevVisible && !hasDeveloper) {
+                        valid = false;
+                        errorMsg = "개발자 여부를 선택해 주세요.";
+                    } else if (isHospVisible && !isHospital) {
+                        valid = false;
+                        errorMsg = "병원 여부를 선택해 주세요.";
+                    }
 
                     if (isDevVisible && !hasDeveloper) {
                         valid = false;

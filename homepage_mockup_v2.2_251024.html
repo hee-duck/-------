@@ -411,32 +411,29 @@
                 <div id="step2" class="hidden">
                     <h3 class="text-2xl font-semibold text-gray-900 mb-6">추가 정보를 알려주세요</h3>
 
-                    <!-- 비즈메시지 전용 -->
-                    <div id="bizmessageOptions" class="hidden mb-8">
-                        <div class="mb-6">
-                            <h4 class="text-lg font-semibold mb-4">개발자가 있으신가요?</h4>
-                            <div class="flex gap-4">
-                                <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer"
-                                    data-dev="yes">예</label>
-                                <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer"
-                                    data-dev="no">아니오</label>
+                    <div id="bizmessageOptions" class="space-y-6">
+                        <!-- 개발자 여부 -->
+                        <div id="devQuestion">
+                            <p class="text-lg font-semibold mb-2">자사에 시스템(API) 연동 가능한 개발자가 있나요?</p>
+                            <div class="flex space-x-4">
+                                <label data-dev="yes" class="border rounded-lg px-4 py-2 cursor-pointer">예</label>
+                                <label data-dev="no" class="border rounded-lg px-4 py-2 cursor-pointer">아니오</label>
                             </div>
                         </div>
 
-                        <div class="mb-8">
-                            <h4 class="text-lg font-semibold mb-4">병원 관련 업종인가요?</h4>
-                            <div class="flex gap-4">
-                                <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer"
-                                    data-hosp="yes">예</label>
-                                <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer"
-                                    data-hosp="no">아니오</label>
+                        <!-- 병원 여부 -->
+                        <div id="hospitalQuestion">
+                            <p class="text-lg font-semibold mb-2">병원, 의료 관련 업종인가요?</p>
+                            <div class="flex space-x-4">
+                                <label data-hosp="yes" class="border rounded-lg px-4 py-2 cursor-pointer">예</label>
+                                <label data-hosp="no" class="border rounded-lg px-4 py-2 cursor-pointer">아니오</label>
                             </div>
                         </div>
                     </div>
 
                     <!-- 모든 서비스 공통 -->
                     <div class="mb-8">
-                        <h4 class="text-lg font-semibold mb-4">(선택사항) 추가 문의 내용을 작성해 주세요</h4>
+                        <h4 class="text-lg font-semibold mb-4 mt-4">(선택사항) 추가 문의 내용을 작성해 주세요</h4>
                         <textarea id="additionalNote"
                             class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
                             rows="4" placeholder="(선택사항) 자유롭게 문의 내용을 입력해 주세요."></textarea>
@@ -507,19 +504,19 @@
                     // 주요 서비스
                     const mainDiv = document.createElement("label");
                     mainDiv.className =
-                        "flex items-center p-4 border-2 rounded-lg cursor-pointer transition-all hover:border-blue-500";
+                        "flex items-center justify-between p-4 border-2 rounded-lg cursor-pointer transition-all hover:border-blue-500";
                     mainDiv.dataset.value = s.value;
                     mainDiv.innerHTML = `
-          <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-4 flex items-center justify-center">
-            <div class="w-3 h-3 rounded-full bg-blue-600 hidden"></div>
-          </div>
-          <div class="flex items-center">
-            <div class="w-8 h-8 flex items-center justify-center mr-3">
-              <i class="${s.icon} text-blue-600 text-xl"></i>
-            </div>
-            <span class="text-lg font-medium">${s.label}</span>
-          </div>
-        `;
+                <div class="flex items-center">
+                    <div class="w-5 h-5 border-2 border-gray-300 rounded mr-3 flex items-center justify-center">
+                        <i class="ri-check-line text-blue-600 text-sm hidden"></i>
+                    </div>
+                    <div class="w-8 h-8 flex items-center justify-center mr-3">
+                        <i class="${s.icon} text-blue-600 text-xl"></i>
+                    </div>
+                    <span class="text-lg font-medium">${s.label}</span>
+                </div>
+            `;
                     mainServicesContainer.appendChild(mainDiv);
 
                     // 추가 서비스
@@ -528,11 +525,11 @@
                         "flex items-center p-3 border rounded-lg cursor-pointer transition-all hover:border-blue-500";
                     addDiv.dataset.value = s.value;
                     addDiv.innerHTML = `
-          <div class="w-5 h-5 border-2 border-gray-300 rounded mr-3 flex items-center justify-center">
-            <i class="ri-check-line text-blue-600 text-sm hidden"></i>
-          </div>
-          <span>${s.label}</span>
-        `;
+                <div class="w-5 h-5 border-2 border-gray-300 rounded mr-3 flex items-center justify-center">
+                    <i class="ri-check-line text-blue-600 text-sm hidden"></i>
+                </div>
+                <span>${s.label}</span>
+            `;
                     additionalServicesContainer.appendChild(addDiv);
                 });
 
@@ -541,7 +538,7 @@
 
             // 이벤트 바인딩
             function bindEvents() {
-                // 1단계 주요 서비스 선택
+                // ✅ 메인 서비스 선택 시 체크 표시 적용
                 mainServicesContainer.querySelectorAll("label").forEach((el) => {
                     el.addEventListener("click", () => {
                         const selected = el.dataset.value;
@@ -554,17 +551,21 @@
 
                         mainService = selected;
 
-                        // 스타일 갱신
+                        // 전체 초기화
                         mainServicesContainer.querySelectorAll("label").forEach((l) => {
                             l.classList.remove("border-blue-500", "bg-blue-50");
-                            l.querySelector("div div").classList.add("hidden");
+                            const checkIcon = l.querySelector("i.ri-check-line");
+                            if (checkIcon) checkIcon.classList.add("hidden");
                         });
+
+                        // 선택된 항목 스타일 적용
                         el.classList.add("border-blue-500", "bg-blue-50");
-                        el.querySelector("div div").classList.remove("hidden");
+                        const checkIcon = el.querySelector("i.ri-check-line");
+                        if (checkIcon) checkIcon.classList.remove("hidden");
                     });
                 });
 
-                // 1단계 추가 서비스 선택
+                // 추가 서비스 선택
                 additionalServicesContainer.querySelectorAll("label").forEach((el) => {
                     el.addEventListener("click", () => {
                         const val = el.dataset.value;
@@ -575,7 +576,6 @@
                             icon.classList.add("hidden");
                             el.classList.remove("border-blue-500", "bg-blue-50");
                         } else {
-                            // 중복 체크
                             if (mainService && mainService === val) {
                                 alert("중복된 서비스입니다. 신청하실 서비스를 다시 선택해주세요.");
                                 return;
@@ -597,35 +597,59 @@
 
                     step1.classList.add("hidden");
                     step2.classList.remove("hidden");
-
-                    // **비즈메시지 관련 질문 노출 조건 (메인 or 추가에 포함된 경우)**
-                    const hasBizMessage =
-                        mainService === "bizmessage" || additionalServices.includes("bizmessage");
-                    bizmessageOptions.classList.toggle("hidden", !hasBizMessage);
-
                     currentStep = 2;
+
+                    // ✅ 기본 비활성화
+                    bizmessageOptions.classList.add("hidden");
+                    document.getElementById("devQuestion").classList.add("hidden");
+                    document.getElementById("hospitalQuestion").classList.add("hidden");
+
+                    // ✅ 선택 서비스에 따라 분기
+                    const serviceToShow = mainService || "";
+                    const addIncludes = (val) => additionalServices.includes(val);
+
+                    // 1. 카카오 메시지 → 개발자 + 병원
+                    if (serviceToShow === "bizmessage" || addIncludes("bizmessage")) {
+                        bizmessageOptions.classList.remove("hidden");
+                        document.getElementById("devQuestion").classList.remove("hidden");
+                        document.getElementById("hospitalQuestion").classList.remove("hidden");
+                    }
+                    // 2. 네이버 스마트스토어, 챗봇, 간편가입 → 개발자만
+                    else if (
+                        ["smartstore", "chatbot", "easysignup"].includes(serviceToShow) ||
+                        additionalServices.some((s) => ["smartstore", "chatbot", "easysignup"].includes(s))
+                    ) {
+                        bizmessageOptions.classList.remove("hidden");
+                        document.getElementById("devQuestion").classList.remove("hidden");
+                    }
+                    // 3. 비즈팅 → 비활성 (단, textarea는 유지)
+                    else {
+                        bizmessageOptions.classList.add("hidden");
+                    }
+
+                    // ✅ 추가 도입 문의 TextArea는 항상 보이도록
+                    document.getElementById("additionalRequest").classList.remove("hidden");
                 });
 
-                // 개발자 여부 선택
+
+                // 개발자 여부
                 document.querySelectorAll("[data-dev]").forEach((label) => {
                     label.addEventListener("click", () => {
                         hasDeveloper = label.getAttribute("data-dev");
-
-                        document.querySelectorAll("[data-dev]").forEach((el) => {
-                            el.classList.remove("border-blue-500", "bg-blue-50");
-                        });
+                        document.querySelectorAll("[data-dev]").forEach((el) =>
+                            el.classList.remove("border-blue-500", "bg-blue-50")
+                        );
                         label.classList.add("border-blue-500", "bg-blue-50");
                     });
                 });
 
-                // 병원 여부 선택
+                // 병원 여부
                 document.querySelectorAll("[data-hosp]").forEach((label) => {
                     label.addEventListener("click", () => {
                         isHospital = label.getAttribute("data-hosp");
-
-                        document.querySelectorAll("[data-hosp]").forEach((el) => {
-                            el.classList.remove("border-blue-500", "bg-blue-50");
-                        });
+                        document.querySelectorAll("[data-hosp]").forEach((el) =>
+                            el.classList.remove("border-blue-500", "bg-blue-50")
+                        );
                         label.classList.add("border-blue-500", "bg-blue-50");
                     });
                 });
@@ -637,8 +661,30 @@
                     currentStep = 1;
                 });
 
-                // 제출 단계
+                // 제출 단계 (Step 2 → Step 3)  
                 submitBtn.addEventListener("click", () => {
+                    // 활성화 여부 확인
+                    const isDevVisible = !document.getElementById("devQuestion").classList.contains("hidden");
+                    const isHospVisible = !document.getElementById("hospitalQuestion").classList.contains("hidden");
+
+                    // 선택값 검증
+                    let valid = true;
+                    let errorMsg = "";
+
+                    if (isDevVisible && !hasDeveloper) {
+                        valid = false;
+                        errorMsg = "개발자 여부를 선택해 주세요.";
+                    } else if (isHospVisible && !isHospital) {
+                        valid = false;
+                        errorMsg = "병원 여부를 선택해 주세요.";
+                    }
+
+                    if (!valid) {
+                        alert(errorMsg);
+                        return; // 검증 실패 → step3로 이동 차단
+                    }
+
+                    // 통과 시 3단계로 이동
                     step2.classList.add("hidden");
                     step3.classList.remove("hidden");
                     currentStep = 3;

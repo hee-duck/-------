@@ -28,14 +28,116 @@
 
 <body class="bg-gray-50 text-gray-900">
 
-    <!-- Header -->
-    <header class="bg-white shadow-md fixed w-full top-0 left-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-            <a href="#" class="flex items-center">
-                <img src="https://www.biztalk.co.kr/newhome/assets/img/logo/logo.svg" alt="Biztalk Logo" class="h-8">
+<!-- Header -->
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- 좌측 로고 -->
+      <div class="flex-shrink-0">
+        <a href="/">
+          <img
+            src="https://www.biztalk.co.kr/newhome/assets/img/logo/logo.svg"
+            alt="비즈톡 로고"
+            class="w-32 h-auto cursor-pointer"
+          />
+        </a>
+      </div>
+
+      <!-- 중앙 GNB -->
+      <nav class="flex-1 flex justify-center space-x-8">
+        <!-- 카카오·네이버 메시지 -->
+        <div class="relative group nav-item">
+          <a
+            href="#"
+            class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium flex items-center whitespace-nowrap"
+          >
+            카카오·네이버 메시지
+            <i class="ri-arrow-down-s-line ml-1"></i>
+          </a>
+          <!-- 드롭다운 -->
+          <div
+            class="absolute top-full left-0 mt-1 bg-white shadow-lg rounded-lg border border-gray-200 min-w-64 py-2 hidden group-hover:block"
+          >
+            <a
+              href="https://biztalk-mb.notion.site/229f8f41a47b80e7b9a2e5f18f42565a?source=copy_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+            >
+              <i class="ri-message-3-line mr-2"></i> 카카오 알림톡·브랜드 메시지
             </a>
+            <a
+              href="https://biztalk-mb.notion.site/22af8f41a47b80d29243ed496b0bb575?source=copy_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+            >
+              <i class="ri-message-3-line mr-2"></i> 네이버 정보성·혜택 메시지
+            </a>
+            <a
+              href="https://biztalk-mb.notion.site/299f8f41a47b8001b6f9d914c0fa8c96?source=copy_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+            >
+              <i class="ri-message-3-line mr-2"></i> 네이버 스마트스토어 연동 메시지
+            </a>
+          </div>
         </div>
-    </header>
+
+        <!-- 고객상담 자동화 챗봇 -->
+        <a
+          href="https://biztalk-mb.notion.site/229f8f41a47b8070a346e1572cb8f853"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium flex items-center whitespace-nowrap"
+        >
+          <i class="ri-robot-line mr-2"></i> 고객상담 자동화 챗봇
+        </a>
+
+        <!-- 소셜 간편가입 -->
+        <a
+          href="https://biztalk-mb.notion.site/229f8f41a47b8064b3b0d1fa9a88f5a7?source=copy_link"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium flex items-center whitespace-nowrap"
+        >
+          <i class="ri-user-add-line mr-2"></i> 소셜 간편가입
+        </a>
+
+        <!-- 비즈팅 -->
+        <a
+          href="https://biztalk-mb.notion.site/22af8f41a47b80ffb591c88023c37a82?source=copy_link"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium flex items-center whitespace-nowrap"
+        >
+          <i class="ri-megaphone-line mr-2"></i> 비즈팅
+        </a>
+      </nav>
+
+      <!-- 우측 도입문의 버튼 -->
+      <div class="flex-shrink-0">
+        <a
+          href="https://www.biztalk.co.kr/newhome/0401_contact.html"
+          target="_blank"
+          class="bg-blue-600 text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition whitespace-nowrap"
+        >
+          도입문의
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 드롭다운 JS -->
+<script>
+  document.querySelectorAll(".nav-item").forEach((item) => {
+    const dropdown = item.querySelector(".absolute");
+    item.addEventListener("mouseenter", () => dropdown.classList.remove("hidden"));
+    item.addEventListener("mouseleave", () => dropdown.classList.add("hidden"));
+  });
+</script>
 
     <main class="pt-20">
 
